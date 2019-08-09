@@ -1,17 +1,16 @@
 html {
-  // 基準1rem=10pxで行く
-  font-size: 62.5%;
-  // 600px以降から、100pxごとに1.25px大きくなる
+  /*  font-size: 5vw;  
+   */
+  // 600px以降から、100pxごとに1px大きくなる
   @media (min-width: 600px) {
-    font-size: calc(62.5% + 5 * (100vw - 600px) / 400)
+    font-size: calc(112.5% + 4 * (100vw - 600px) / 400)
   }
 
-  // 1,000px以上は、15pxに
+  // 1,000px以上は、22pxに
   @media (min-width: 1000px) {
-    font-size: calc(15/16*100%)
+    font-size: calc(137.5%)
   }
 }
-
 main {
   h1 {
     font-size: 3rem;
@@ -29,25 +28,21 @@ main {
     margin: 0 auto;
   }
 
-  #title-area {
+  .title-area {
     background: rgba(255,0,0,0.2);
-    padding: 3rem 0 2rem 0;
-    h1 {
-      margin-bottom: 1rem;
+    height: 40vh;
+
+    p {
     }
   }
 
-  #input-area {
+  .input-area {
     background: rgba(25, 82, 82, 0.1);
-    padding-top: 1rem;
+    height: 50vh;
     ul {
       li {
         .input-item {
-          margin-bottom: 2rem;
           .input-description {
-            h2 {
-              margin-left: 3rem;
-            }
           }
 
         }
@@ -56,17 +51,19 @@ main {
     }
   }
 
-  #output-area {
+  .output-area {
     background: rgba(16, 242, 242, 0.1);
-    padding: 1rem 0;
+    height: 15vh;
     .output-field {
-      padding: 1rem;
-      height: 4rem;
+      p {
+
+      }
     }
   }
 
   footer {
     background: rgba(0, 173, 173, 0.5);
-    padding: 1rem 0;
+    height: 10vh;
+
   }
 }
