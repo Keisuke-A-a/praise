@@ -1,0 +1,69 @@
+
+<main>
+<section id="title-area" class="text-center">
+  <div class="container">
+    <h1>「褒め言葉」ジェネレーター</h1>
+    <h3>持ち物の褒め言葉を作ります</h3>
+  </div>
+</section>
+
+<section id="input-area" class="text-center">
+  <div class="container">
+    <h3>あなたが褒めたいと思っている人の<br>情報を入力してください</h3>
+    <%= form_with url: "/words/output",remote: true do |f|  %>
+      <ul class="list-unstyled form-group">
+        <li>
+          <div class="row input-item">
+            <div class="col-md-6 col-10 text-sm-left input-description">
+              <h2>その人の性別は？</h2>
+            </div>
+            <%= f.select :sex,
+              { "男性": :male,
+                "女性": :female }, {},  { class: 'col-md-6 col-10 form-control drop-item' } %>
+        </div>
+        </li>
+
+        <li>
+          <div class="row input-item">
+            <div class="col-md-6 col-10 mx-auto text-sm-left input-description">
+              <h2>あなたとの関係は？</h2>
+            </div>
+            <%= f.select :relation,
+              {"上司": :boss, 'パートナー': :partner, '友達': :frined }, {}, {class: 'col-md-6 col-10 mx-auto form-control'} %>
+        </div>
+        </li>
+
+        <li>
+          <div class="row input-item">
+            <div class="col-md-6 col-10 mx-auto text-sm-left input-description">
+              <h2>何を褒めたいですか？</h2>
+            </div>
+            <%= f.text_field :object,class: " form-control col-md-6 col-10 mx-auto" %>
+          </div>
+        </li>
+
+        <li>
+          <div class="row input-item">
+            <div class="col-md-6 col-10 mx-auto text-sm-left input-description">
+              <h2>どんな色ですか？</h2>
+            </div>
+            <%= f.select :color,
+              { "黒": :balck, "赤": :red, '青': :blue }, {}, {class: 'col-md-6 col-10 mx-auto form-control'} %>
+        </div>
+        </li>
+      </ul>
+
+      <%= f.submit "作成", class: 'btn btn-block btn-primary mx-auto' %>
+    <% end %>
+  </div>
+</section>
+<div id="output_area">
+  <%= render "output_area" %>
+</div>
+</main>
+
+<footer class="text-center">
+  <div class="container">
+    <p>@2019 copyright</p>
+  </div>
+</footer>

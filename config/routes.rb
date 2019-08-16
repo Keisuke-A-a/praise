@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root "words#new"
-  get "words/example", to: "words#example"
+  resources :words
+  root "words#input"
+  post "words/output", to: "words#output"
 end
